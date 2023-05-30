@@ -54,7 +54,7 @@ with col3:
     INC = st.text_input('Сколько вы зарабатываете в месяц? (INC)')
     DEBT = st.text_input('Сколько вы тратите на погашение кредитов в месяц? (DEBT)')
 try:
-    DEBTINC=INC/DEBT
+    DEBTINC=DEBT/INC
 except:
     DEBTINC=0
 
