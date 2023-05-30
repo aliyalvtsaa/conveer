@@ -101,6 +101,8 @@ y_pred_proba = pipeline.predict_proba(df2)
 from my_functions import otvet
 
 if st.button('Рассчитать'):
-    st.write(otvet(y_pred_proba))
-    st.write(y_pred_proba)
+    with st.spinner('Wait for it...'):
+        time.sleep(7)
+        st.write(otvet(y_pred_proba))
+        st.write(y_pred_proba)
     st.balloons()
