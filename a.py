@@ -53,10 +53,8 @@ with col3:
     NINQ = st.slider('Сколько в последнее время вы отправляли запросов на кредит? (NINQ)',0, 20, 0, 1)
     INC = st.text_input('Сколько вы зарабатываете в месяц? (INC)')
     DEBT = st.text_input('Сколько вы тратите на погашение кредитов в месяц? (DEBT)')
-try:
-    DEBTINC=DEBT/INC
-except:
-    DEBTINC=0
+DEBTINC=DEBT/INC
+
 
 import pandas as pd
 import numpy as np
