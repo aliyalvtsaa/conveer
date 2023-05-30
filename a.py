@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime
+import sklearn
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
