@@ -47,11 +47,6 @@ current_date = datetime.now()
 CLAGE = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
 
 
-try:
-    DEBTINC=INC/DEBT
-except:
-    DEBTINC=0
-
 with col3:
     DEROG = st.slider('Сколько у вас было серьезных уничижительных отчетов? (DEROG)',0, 10, 0, 1)
     DELINQ = st.slider('Сколько у вас просроченных кредитов? (DELINQ)',0, 15, 0, 1)
