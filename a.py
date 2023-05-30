@@ -1,4 +1,5 @@
 import streamlit as st
+!pip install scikit-learn
 import sklearn
 import datetime
 
