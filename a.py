@@ -5,8 +5,7 @@ from PIL import Image
 
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
-image = Image.open('money.png').resize((400, 300))
-st.image(image)
+
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
 st.write('Введите доступные вам данные, чтобы оценить свои шансы на получение кредита')
 # Create two columns
@@ -100,12 +99,16 @@ df2['REASON'] = df2['REASON'].replace(['На обустройство дома',
 df2['JOB'] = df2['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
                                 [0, 1, 2, 3, 4, 5])
 y_pred_proba = pipeline.predict_proba(df2)
-
+image = Image.open('money.png').resize((300, 200))
 from my_functions import otvet
 
 if st.button('Рассчитать'):
     with st.spinner('Wait for it...'):
         time.sleep(7)
-        st.write(otvet(y_pred_proba))
-        st.write(y_pred_proba)
-    st.balloons()
+        if otvet(y_pred_proba)=='Вам предварительно одобрен кредит!':
+            st.write('Вам предварительно одобрен кредит!')
+            st.image(image)
+            st.balloons()
+        else:
+            st.write('Благодарим за обращение, но пока мы не можем оформить вам кредит(')
+        
