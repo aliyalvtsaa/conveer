@@ -41,7 +41,7 @@ with col2:
     "Кем вы работаете?",
     ('Менеджер', 'Офисный работник', 'В продажах', 'Профессор', 'Работаю на себя','Другое'))
     YOJ = st.slider('Сколько вы проработали на этой работе? (YOJ)',0, 100, 5)
-    given_date = st.date_input("When\'s your birthday")
+    given_date = st.date_input("Когда вы взяли ваш самый давний кредит?")
 from datetime import datetime
 current_date = datetime.now()
 # Calculate the difference in months
@@ -102,6 +102,7 @@ from my_functions import otvet
 if st.button('Рассчитать'):
     with st.spinner('Пожалуйста, подождите...'):
         time.sleep(7)
+        st.write(df2)
         if otvet(y_pred_proba)=='Вам предварительно одобрен кредит!':
             st.write('Вам предварительно одобрен кредит!')
             st.image(image)
