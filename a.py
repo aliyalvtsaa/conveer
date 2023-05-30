@@ -1,6 +1,7 @@
 import streamlit as st
 #import sklearn
 import datetime
+import time
 
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
