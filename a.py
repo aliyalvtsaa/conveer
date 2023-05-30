@@ -1,10 +1,12 @@
 import streamlit as st
-#import sklearn
 import datetime
-import time
+import streamlit as st
+from PIL import Image
 
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
+image = Image.open('sunrise.jpg')
+st.image(image, caption='Sunrise by the mountains')
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
 st.write('Введите доступные вам данные, чтобы оценить свои шансы на получение кредита')
 # Create two columns
