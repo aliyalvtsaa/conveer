@@ -5,7 +5,7 @@ from PIL import Image
 
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
-image = Image.open('sunrise.jpg')
+image = Image.open('https://vk.com/feed?z=photo-97665403_457309816%2Fwall-97665403_328739')
 st.image(image, caption='Sunrise by the mountains')
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
 st.write('Введите доступные вам данные, чтобы оценить свои шансы на получение кредита')
