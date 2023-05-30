@@ -106,6 +106,7 @@ if st.button('Рассчитать'):
             st.write('Вам предварительно одобрен кредит!')
             st.image(image)
             st.balloons()
+            st.write(y_pred_proba)
         else:
             st.write('Благодарим за обращение, но пока мы не можем оформить вам кредит(')
-        
+            st.write(y_pred_proba)
