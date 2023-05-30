@@ -1,4 +1,5 @@
 import streamlit as st
+import sklearn
 import datetime
 
 st. set_page_config(layout="wide")
