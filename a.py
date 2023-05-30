@@ -75,7 +75,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load the saved pipeline from the file
-pipeline = joblib.load('/Users/aliyasta/Downloads/pipeline_file.pkl')
+pipeline = joblib.load('pipeline_file.pkl')
 
 
 import pandas as pd
