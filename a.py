@@ -5,8 +5,8 @@ from PIL import Image
 
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
-image = Image.open('money.png')
-st.image(image.resize((400, 300)))
+image = Image.open('money.png').resize(400, 300)
+st.image(image)
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
 st.write('Введите доступные вам данные, чтобы оценить свои шансы на получение кредита')
 # Create two columns
