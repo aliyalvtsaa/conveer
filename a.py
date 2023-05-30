@@ -104,7 +104,7 @@ image = Image.open('money.png').resize((300, 200))
 from my_functions import otvet
 
 if st.button('Рассчитать'):
-    with st.spinner('Wait for it...'):
+    with st.spinner('Пожалуйста, подождите...'):
         time.sleep(7)
         if otvet(y_pred_proba)=='Вам предварительно одобрен кредит!':
             st.write('Вам предварительно одобрен кредит!')
