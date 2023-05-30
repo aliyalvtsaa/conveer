@@ -85,7 +85,7 @@ df2 = pd.DataFrame(columns=['LOAN', 'MORTDUE', 'VALUE', 'REASON', 'JOB', 'YOJ', 
                             'DELINQ', 'CLAGE', 'NINQ', 'CLNO', 'DEBTINC'])
 
 # Create a dictionary with the values for the new row
-new_row = {'LOAN': LOAN, 'MORTDUE': MORTDUE, 'REASON': REASON,
+new_row = {'LOAN': LOAN,'VALUE': VALUE, 'MORTDUE': MORTDUE, 'REASON': REASON,
            'JOB': JOB, 'YOJ': YOJ, 'DEROG': DEROG,
            'DELINQ': DELINQ, 'CLAGE': CLAGE, 'NINQ': NINQ,
            'CLNO': CLNO, 'DEBTINC': DEBTINC}
