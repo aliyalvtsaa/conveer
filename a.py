@@ -1,4 +1,5 @@
 import streamlit as st
+st. set_page_config(layout="wide")
 st.markdown(
     """
         <!-- Google tag (gtag.js) -->
@@ -17,7 +18,7 @@ import streamlit as st
 from PIL import Image
 
         
-st. set_page_config(layout="wide")
+
 st.header('Здравствуйте!')
 
 st.subheader('На этой страничке вы можете воспользоваться нашей учебной версией кредитного конвейера.')
