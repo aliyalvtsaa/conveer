@@ -26,10 +26,10 @@ CLAGE=0
 # Add inputs to the first column
 
 with col1:
-    LOAN = st.slider('На какую сумму вы хотите взять кредит? (LOAN)', 0, 100000, 0, 1000)
-    MORTDUE = st.slider('Какой у вас долг по ипотеке? (MORTDUE)',0, 500000, 0, 10000)
+    LOAN = st.slider('На какую сумму в $ вы хотите взять кредит? (LOAN)', 0, 100000, 0, 1000)
+    MORTDUE = st.slider('Какой у вас долг по ипотеке в $? (MORTDUE)',0, 500000, 0, 10000)
     CLNO = st.slider('Сколько у вас кредитов на данный момент? (CLNO)', 0, 100,0, 1)
-    VALUE = st.slider('На сколько вы оцениваете свою собственность? (VALUE)',0, 1000000,0, 50000)
+    VALUE = st.slider('На сколько вы оцениваете свою собственность в $? (VALUE)',0, 1000000,0, 50000)
 
 # Add inputs to the second column
 with col2:
@@ -39,13 +39,12 @@ with col2:
     JOB = genre = st.radio(
     "Кем вы работаете?",
     ('Менеджер', 'Офисный работник', 'В продажах', 'Профессор', 'Работаю на себя','Другое'))
-    YOJ = st.slider('Сколько вы проработали на этой работе? (YOJ)',0, 100, 0, 5)
+    YOJ = st.slider('Сколько месяцев вы проработали на этой работе? (YOJ)',0, 100, 0, 5)
     given_date = st.date_input("Когда вы взяли ваш самый давний кредит? (CLAGE)")
 from datetime import datetime
 current_date = datetime.now()
 # Calculate the difference in months
 CLAGE = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
-
 
 with col3:
     DEROG = st.slider('Сколько у вас было серьезных уничижительных отчетов? (DEROG)',0, 10, 0, 1)
