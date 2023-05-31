@@ -1,4 +1,4 @@
-import streamlit as st
+
 st.markdown(
     """
         <!-- Google tag (gtag.js) -->
@@ -10,6 +10,7 @@ st.markdown(
           gtag('config', 'G-6848NZ0VDT');
         </script>
     """, unsafe_allow_html=True)
+import streamlit as st
 import datetime
 import time
 import streamlit as st
