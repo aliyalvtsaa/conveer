@@ -1,8 +1,4 @@
 import streamlit as st
-import datetime
-import time
-import streamlit as st
-from PIL import Image
 st.markdown(
     """
         <!-- Google tag (gtag.js) -->
@@ -14,6 +10,11 @@ st.markdown(
           gtag('config', 'G-6848NZ0VDT');
         </script>
     """, unsafe_allow_html=True)
+import datetime
+import time
+import streamlit as st
+from PIL import Image
+
         
 st. set_page_config(layout="wide")
 st.header('Здравствуйте!')
