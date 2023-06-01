@@ -1,17 +1,6 @@
 import streamlit as st
 #устанавливаем широкий режим
 st. set_page_config(layout="wide")
-st.markdown(
-    """
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6848NZ0VDT"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-6848NZ0VDT');
-        </script>
-    """, unsafe_allow_html=True)
 
 import datetime
 import time
@@ -52,7 +41,7 @@ with col2:
     "Кем вы работаете?",
     ('Менеджер', 'Офисный работник', 'В продажах', 'Профессор', 'Работаю на себя','Другое'))
     YOJ = st.slider('Сколько месяцев вы проработали на этой работе? (YOJ)',0, 100, 0, 5)
-    given_date = st.date_input("Когда вы взяли ваш самый давний кредит? (CLAGE)", min_value='1923-06-01')
+    given_date = st.date_input("Когда вы взяли ваш самый давний кредит? (CLAGE)", min_value= date(1923, 1, 1) )
 current_date = datetime.now()
 #по дате посчитаем, сколько месяцев прошло с получения самого давнего кредита
 CLAGE = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
