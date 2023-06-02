@@ -69,7 +69,7 @@ df2['REASON'] = df2['REASON'].replace(['На обустройство дома',
 df2['JOB'] = df2['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
                                 [0, 1, 2, 3, 4, 5])
 y_pred_proba = pipeline.predict_proba(df2)
-image = Image.open('money.png').resize((300, 200))
+image = Image.open('star.png').resize((300, 200))
 
 #импортируем функцию для связи с внешними данными
 from my_functions import otvet
