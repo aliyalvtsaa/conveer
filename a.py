@@ -50,7 +50,7 @@ JOB = genre = st.radio(
 given_date1 = st.date_input("Когда вы начали работать на текущей должности? (YOJ)", min_value= date(1923, 1, 1) )
 current_date = datetime.now()
 #по дате посчитаем, сколько месяцев прошло с вступления заёмщика в должность
-YOJ = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
+YOJ = (current_date.year - given_date1.year) * 12 + (current_date.month - given_date1.month)
 given_date = st.date_input("Когда вы взяли ваш самый давний кредит? (CLAGE)", min_value= date(1923, 1, 1) )
 #по дате посчитаем, сколько месяцев прошло с получения самого давнего кредита
 CLAGE = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
