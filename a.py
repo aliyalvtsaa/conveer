@@ -2,7 +2,7 @@ import streamlit as st
 
 page_bg_img = '''
 <style>
-body {
+.stApp {
 background-image: url("https://i.ibb.co/ZBnNnwL/e.png");
 background-size: cover;
 }
