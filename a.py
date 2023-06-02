@@ -1,6 +1,5 @@
 import streamlit as st
-#устанавливаем широкий режим
-st. set_page_config(layout="wide")
+
 import streamlit.components.v1 as components
 components.html(
     """
