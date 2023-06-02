@@ -26,16 +26,17 @@ st.write('Введите доступные вам данные, чтобы оц
 
 LOAN=0
 CLNO=0
-MORTDUE=Nan
 VALUE=0
 REASON=0
 JOB=0
 YOJ=0
-DEROG=Nan
-DELINQ=Nan
-DEBTINC=0
-NINQ=Nan
 CLAGE=0
+DEROG=None
+DELINQ=None
+DEBTIN=None
+NINQ=None
+MORTDUE=None
+
 
 
 LOAN = st.slider('На какую сумму в вы хотите взять кредит? (LOAN)', 0, 100000, 0, 1000)
