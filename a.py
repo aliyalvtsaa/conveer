@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
+
 import datetime
 from datetime import date
 import time
