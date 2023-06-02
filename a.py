@@ -1,15 +1,14 @@
 import streamlit as st
 
-st.markdown(
-   f"""
-   <style>
-   p {
-   background-image: 'e.png’;
-   }
-   </style>
-   """,
-   unsafe_allow_html=True)
-
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://i.ibb.co/ZBnNnwL/e.png");
+background-size: cover;
+}
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
 import datetime
 from datetime import date
 import time
