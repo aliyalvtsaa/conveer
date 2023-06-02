@@ -20,7 +20,7 @@ st.markdown(
 <noscript><div><img src="https://mc.yandex.ru/watch/93814389" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
     """,
-    allow_unsafe_html=True
+    unsafe_allow_html=True
 )
 import datetime
 from datetime import date
