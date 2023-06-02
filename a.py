@@ -29,7 +29,7 @@ VALUE=0
 REASON=0
 JOB=0
 YOJ=0
-CLAGE=0
+CLAGE=None
 DEROG=None
 DELINQ=None
 DEBTIN=None
@@ -51,9 +51,6 @@ given_date1 = st.date_input("Когда вы начали работать на 
 current_date = datetime.now()
 #по дате посчитаем, сколько месяцев прошло с вступления заёмщика в должность
 YOJ = (current_date.year - given_date1.year) * 12 + (current_date.month - given_date1.month)
-given_date = st.date_input("Когда вы взяли ваш самый давний кредит? (CLAGE)", min_value= date(1923, 1, 1) )
-#по дате посчитаем, сколько месяцев прошло с получения самого давнего кредита
-CLAGE = (current_date.year - given_date.year) * 12 + (current_date.month - given_date.month)
 INC = st.text_input('Сколько вы зарабатываете в месяц? (INC)')
 DEBT = st.text_input('Сколько в месяц вы тратите на погашение других кредитов? (DEBT)')
 try:
