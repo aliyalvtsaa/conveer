@@ -1,13 +1,5 @@
 import streamlit as st
 
-page_bg_img = '''
-<style>
-.stApp {
-background-image: url("https://i.ibb.co/zJL9X74/e-2.png");
-background-size: cover;
-}
-</style>
-'''
 st.markdown(page_bg_img, unsafe_allow_html=True)
 import datetime
 from datetime import date
