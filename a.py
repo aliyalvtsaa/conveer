@@ -64,14 +64,6 @@ import joblib
 pipeline = joblib.load('pipeline_file.pkl')
 
 data_file = 'data.csv'
-if st.session_state.get('loaded_data'):
-    df = pd.read_csv(data_file)
-else:
-    column_names = ['LOAN', 'MORTDUE', 'VALUE', 'REASON', 'JOB', 'YOJ', 'DEROG',
-                    'DELINQ', 'CLAGE', 'NINQ', 'CLNO', 'DEBTINC']
-    df = pd.DataFrame(columns=column_names)
-    st.session_state['loaded_data'] = True
-
 image = Image.open('star.png').resize((270, 300))
 
 #импортируем функцию для связи с внешними данными
