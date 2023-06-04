@@ -84,6 +84,9 @@ if st.button('Рассчитать'):
            'CLNO': CLNO, 'DEBTINC': DEBTINC}
         new_row = pd.DataFrame(new_row, index=[0])
         df = pd.concat([df, new_row], ignore_index=True)
+        df['REASON'] = df['REASON'].replace(['На обустройство дома', 'Для консолидации долга'], [0, 1])
+        df['JOB'] = df['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
+                                [0, 1, 2, 3, 4, 5])
         y_pred_proba = pipeline.predict_proba(df.iloc[-1])
         df.to_csv(data_file, index=False)  
         time.sleep(7)
