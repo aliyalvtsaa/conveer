@@ -1,5 +1,11 @@
 import streamlit as st
-
+import datetime
+from datetime import date
+import time
+from datetime import datetime
+import streamlit as st
+from PIL import Image
+import pandas as pd
 
 page_bg_img = '''
 <style>
@@ -11,13 +17,6 @@ background-size: cover;
 '''
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-import datetime
-from datetime import date
-import time
-from datetime import datetime
-import streamlit as st
-from PIL import Image
-
         
 #напишем приветствие
 st.header('Здравствуйте!')
