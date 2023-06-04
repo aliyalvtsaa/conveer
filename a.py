@@ -79,7 +79,7 @@ if st.button('Рассчитать'):
                                 [0, 1, 2, 3, 4, 5])
         df = pd.concat([df, new_row], ignore_index=True)
         y_pred_proba = pipeline.predict_proba(new_row)
-        df.to_csv(data_file, index=False)  
+        df.to_csv('data.csv', index=False)  
         time.sleep(7)
         st.write(df)
         if otvet(y_pred_proba)=='Вам предварительно одобрен кредит!':
