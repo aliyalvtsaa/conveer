@@ -75,6 +75,27 @@ new_row = pd.DataFrame(new_row, index=[0])
 df2=pd.read_csv('data.py')
 df2 = pd.concat([df2, new_row], ignore_index=True)
 df2.to_csv('data.py')
+####
+data_file = 'data.csv'
+if st.session_state.get('loaded_data'):
+    df = pd.read_csv(data_file)
+else:
+    column_names = ['LOAN', 'MORTDUE', 'VALUE', 'REASON', 'JOB', 'YOJ', 'DEROG',
+                    'DELINQ', 'CLAGE', 'NINQ', 'CLNO', 'DEBTINC']
+    df = pd.DataFrame(columns=column_names)
+    st.session_state['loaded_data'] = True
+
+# Add a new row to the DataFrame
+if st.button('Add Row'):
+    new_row = {'LOAN': 100000, 'MORTDUE': 200000, 'VALUE': 300000, 'REASON': 'Refinance',
+               'JOB': 'Engineer', 'YOJ': 5, 'DEROG': 0, 'DELINQ': 0, 'CLAGE': 150, 'NINQ': 1,
+               'CLNO': 20, 'DEBTINC': 30}
+    df = df.append(new_row, ignore_index=True)
+    df.to_csv(data_file, index=False)  # Save the DataFrame to CSV
+
+# Display the DataFrame
+st.dataframe(df)
+####
 
 
 y_pred_proba = pipeline.predict_proba(df2)
