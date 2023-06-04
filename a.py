@@ -76,9 +76,7 @@ df2=pd.read_csv('data.py')
 df2 = pd.concat([df2, new_row], ignore_index=True)
 df2.to_csv('data.py')
 
-df2['REASON'] = df2['REASON'].replace(['На обустройство дома', 'Для консолидации долга'], [0, 1])
-df2['JOB'] = df2['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
-                                [0, 1, 2, 3, 4, 5])
+
 y_pred_proba = pipeline.predict_proba(df2)
 image = Image.open('star.png').resize((270, 300))
 
