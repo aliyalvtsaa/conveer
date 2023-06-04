@@ -66,15 +66,16 @@ pipeline = joblib.load('pipeline_file.pkl')
 
 import pandas as pd
 # создадим пустой датасет и добавим в него строку с нашими данными
-df2 = pd.DataFrame(columns=['LOAN', 'MORTDUE', 'VALUE', 'REASON', 'JOB', 'YOJ', 'DEROG',
-                            'DELINQ', 'CLAGE', 'NINQ', 'CLNO', 'DEBTINC'])
 
 new_row = {'LOAN': LOAN,'VALUE': VALUE, 'MORTDUE': MORTDUE, 'REASON': REASON,
            'JOB': JOB, 'YOJ': YOJ, 'DEROG': DEROG,
            'DELINQ': DELINQ, 'CLAGE': CLAGE, 'NINQ': NINQ,
            'CLNO': CLNO, 'DEBTINC': DEBTINC}
 new_row = pd.DataFrame(new_row, index=[0])
+df2=pd.read_csv('data.py')
 df2 = pd.concat([df2, new_row], ignore_index=True)
+df2.to_csv('data.py')
+
 df2['REASON'] = df2['REASON'].replace(['На обустройство дома', 'Для консолидации долга'], [0, 1])
 df2['JOB'] = df2['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
                                 [0, 1, 2, 3, 4, 5])
