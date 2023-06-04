@@ -84,7 +84,7 @@ if st.button('Рассчитать'):
            'CLNO': CLNO, 'DEBTINC': DEBTINC}
         new_row = pd.DataFrame(new_row, index=[0])
         df = pd.concat([df, new_row], ignore_index=True)
-        y_pred_proba = pipeline.predict_proba(df[-1])
+        y_pred_proba = pipeline.predict_proba(new_row)
         df.to_csv(data_file, index=False)  
         time.sleep(7)
         st.write(df)
