@@ -78,16 +78,16 @@ image = Image.open('star.png').resize((270, 300))
 from my_functions import otvet
 if st.button('Рассчитать'):
     with st.spinner('Пожалуйста, подождите...'):
-        new_row = {'LOAN': LOAN,'VALUE': VALUE, 'MORTDUE': MORTDUE, 'REASON': REASON,
+        new_row = {'LOAN': LOAN,'MORTDUE': MORTDUE,'VALUE': VALUE, 'REASON': REASON,
            'JOB': JOB, 'YOJ': YOJ, 'DEROG': DEROG,
            'DELINQ': DELINQ, 'CLAGE': CLAGE, 'NINQ': NINQ,
            'CLNO': CLNO, 'DEBTINC': DEBTINC}
         new_row = pd.DataFrame(new_row, index=[0])
-        df = pd.concat([df, new_row], ignore_index=True)
-        df['REASON'] = df['REASON'].replace(['На обустройство дома', 'Для консолидации долга'], [0, 1])
-        df['JOB'] = df['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
+        new_row['REASON'] = new_row['REASON'].replace(['На обустройство дома', 'Для консолидации долга'], [0, 1])
+        new_row['JOB'] = new_row['JOB'].replace(['Другое', 'В продажах', 'Офисный работник', 'Менеджер', 'Профессор', 'Работаю на себя'], 
                                 [0, 1, 2, 3, 4, 5])
-        y_pred_proba = pipeline.predict_proba(df.iloc[-1])
+        df = pd.concat([df, new_row], ignore_index=True)
+        y_pred_proba = pipeline.predict_proba(new_row)
         df.to_csv(data_file, index=False)  
         time.sleep(7)
         st.write(df)
