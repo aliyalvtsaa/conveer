@@ -1,7 +1,7 @@
 beautifulsoup4==4.12.2
 threadpoolctl==2.0.0
 joblib==1.2.0
-
+currencyapicom
 matplotlib==3.7.1
 matplotlib-inline==0.1.6
 
