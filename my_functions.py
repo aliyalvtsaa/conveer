@@ -1,44 +1,25 @@
 def otvet(y_pred_proba):
     from datetime import datetime, timedelta
     import requests
-    import xml.etree.ElementTree as ET
-    # сегодняшняя дата
-    today = datetime.today()
-    # дата 35 дней назад
-    start_date = today - timedelta(days=35)
-    # создаем список дат в date_list
-    date_list = []
-    current_date = start_date
-    while current_date <= today:
-        date_string = current_date.strftime("%d/%m/%Y")
-        date_list.append(date_string)
-        current_date += timedelta(days=1)
-    #теперь получим цены
-    prices=[]
-    for day_today in date_list:
-        r=requests.get("http://www.cbr.ru/scripts/XML_daily.asp?", params={"date_req":day_today})
-        root = ET.fromstring(r.content)
-        for valute in root.iter('Valute'):
-            name = valute.find('Name').text
-            if name == "Доллар США":
-                desired_valute = valute.find('Value').text
-                desired_valute = desired_valute.replace(",", ".")
-        prices.append(float(desired_valute))
-
-    # наш бенчмарк
-    benchmark = max(prices)
-    # средее
-    average = sum(prices) / len(prices)
-    # десять процентов
-    threshold = 0.1
-    if abs(average/benchmark - 1)<0.1:
-        itog='рубль укрепляется'
+    import currencyapicom
+    client = currencyapicom.Client('qVc9LBFXf4ScZGLMR6YY3vxaQq03htsgFW4VFk5I')
+    from datetime import datetime, timedelta
+    day_before_yesterday = datetime.now() - timedelta(days=2)
+    day_before_yesterday_str = yesterday.strftime('%Y-%m-%d')
+    result1 = client.historical(day_before_yesterday_str)
+    data1=result1['data']['EUR']['value']
+    yesterday = datetime.now() - timedelta(days=1)
+    yesterday_str = yesterday.strftime('%Y-%m-%d')
+    result2 = client.historical(yesterday_str)
+    data2=result1['data']['EUR']['value']
+    if result2-result1>0:
+        itog='доллар укрепляется'
     else:
-        itog='рубль не укрепляется'
+        itog='доллар не укрепляется'
 
-    if itog=='рубль укрепляется' and y_pred_proba[0][1]<0.5:
+    if itog=='доллар укрепляется' and y_pred_proba[0][1]<0.55:
         result='Вам предварительно одобрен кредит!'
-    elif itog=='рубль не укрепляется' and y_pred_proba[0][1]<0.4:
+    elif itog=='доллар не укрепляется' and y_pred_proba[0][1]<0.45:
         result='Вам предварительно одобрен кредит!'
     else:
         result='Благодарим за обращение, но пока мы не можем оформить вам кредит('
