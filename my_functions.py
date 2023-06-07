@@ -4,7 +4,7 @@ def otvet(y_pred_proba):
     import currencyapicom
     client = currencyapicom.Client('qVc9LBFXf4ScZGLMR6YY3vxaQq03htsgFW4VFk5I')
     day_before_yesterday = datetime.now() - timedelta(days=2)
-    day_before_yesterday_str = yesterday.strftime('%Y-%m-%d')
+    day_before_yesterday_str = day_before_yesterday.strftime('%Y-%m-%d')
     result1 = client.historical(day_before_yesterday_str)
     data1=result1['data']['EUR']['value']
     yesterday = datetime.now() - timedelta(days=1)
