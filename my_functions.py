@@ -12,7 +12,7 @@ def otvet(y_pred_proba):
     yesterday_str = yesterday.strftime('%Y-%m-%d')
     result2 = client.historical(yesterday_str)
     data2=result1['data']['EUR']['value']
-    if result2-result1>0:
+    if data2-data1>0:
         itog='доллар укрепляется'
     else:
         itog='доллар не укрепляется'
