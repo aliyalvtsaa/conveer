@@ -6,6 +6,17 @@ from datetime import datetime
 import streamlit as st
 from PIL import Image
 import pandas as pd
+
+page_bg_img = '''
+<style>
+.stApp {
+background-image: url("https://sun9-45.userapi.com/impg/VNJn_pn39ZxAKRVxLTlIG6OfLqj_V66jorJFPg/8bx4oihFGW0.jpg?size=1920x1080&quality=95&sign=5584774fc19d4bc9a604e7c90bd2a69d&type=album");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
         
 #напишем приветствие
 st.header('Здравствуйте!')
