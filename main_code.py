@@ -66,7 +66,7 @@ pipeline = joblib.load('pipeline_file.pkl')
 df = pd.read_csv('data.csv')
 image = Image.open('star.png').resize((270, 300))
 #импортируем функцию для связи с внешними данными
-from my_functions import otvet
+from external_data_api import otvet
 if st.button('Рассчитать'):
     with st.spinner('Пожалуйста, подождите...'):
         #в новый ряд поставим значения, которые ввел пользоеватель
