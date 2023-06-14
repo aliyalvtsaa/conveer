@@ -63,7 +63,7 @@ except:
 import joblib
 #загрузим сохраненную модель классификации
 pipeline = joblib.load('pipeline_file.pkl')
-df = pd.read_csv('data.csv')
+
 image = Image.open('star.png').resize((270, 300))
 #импортируем функцию для связи с внешними данными
 from external_data_api import otvet
